@@ -47,17 +47,21 @@ class ComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Comic $comic)
+    public function edit($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+        //return view()
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comic $comic)
+    public function update(Request $request, $id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+        $data = $request->all();
+        $comic->update($data);
+        //return view()
     }
 
     /**
