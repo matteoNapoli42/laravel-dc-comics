@@ -26,11 +26,11 @@ Route::resource('admin/comics', ComicsController::class);
 
 //PageController Routes
 
-Route::get('/', function () {
-    return view('home');
-});
+
 
 Route::get('/', [PageController::class, 'welcome']);
+
+//Route::get('',[PageController::class,''])
 
 
 

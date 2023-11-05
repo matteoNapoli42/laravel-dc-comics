@@ -13,9 +13,4 @@ class PageController extends Controller
         $comics = Comic::all();
         return view('partials.card', compact('comics'));
     }
-
-    public function card()
-    {
-        return view('partials.card');
-    }
 }
