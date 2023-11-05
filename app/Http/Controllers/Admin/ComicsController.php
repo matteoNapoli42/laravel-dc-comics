@@ -35,6 +35,11 @@ class ComicsController extends Controller
     {
         $req = $request->all();
         $newComic = new Comic();
+        $newComic->sale_date = date("Y-m-d");
+        if ($request->has('thumb')) {
+            $path = Storage::put('comics_thumbs', $request->thumb);
+            $newComic->thumb = $path;
+        }
         $newComic->fill($req);
         $newComic->save();
 
