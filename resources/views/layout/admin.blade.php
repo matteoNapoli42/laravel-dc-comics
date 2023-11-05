@@ -13,13 +13,11 @@
 </head>
 
 <body>
-    @include ('partials.header')
+    <h1>Admin</h1>
     
     @yield('content')
-    
-    @include ('partials.merch')
-    
-    @include ('partials.footer')
+
+
 </body>
 
 </html>

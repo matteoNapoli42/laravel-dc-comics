@@ -1,7 +1,7 @@
 <section class="px-0" id="upperFooter">
     <div class="d-flex container">
         <div class="col-6 d-flex gap-0 py-5">
-            @foreach (config('footerVoices') as $voice)
+            @foreach (config('footer-voices') as $voice)
                 <div class="col-3">
                     <h5>{{ $voice['title'] }}</h5>
                     <ul>

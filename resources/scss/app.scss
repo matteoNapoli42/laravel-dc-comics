@@ -1,1 +1,65 @@
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
+
+@import '~bootstrap/scss/bootstrap';
+
+#jumbotron {
+    background-image: url('../img/jumbotron.jpg');
+    height: 408px;
+}
+
+#series {
+    background-color: black;
+}
+
+#merchZone {
+    background-color: #0282f9ff;
+    height: 155px;
+}
+
+ul {
+    list-style: none;
+}
+
+#upperFooter {
+    background: url("../assets/img/footer-bg.jpg");
+    background-size: contain;
+}
+
+#lowerFooter {
+    background-color: #303030ff;
+}
+
+h5 {
+    color: white;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: grey;
+}
+
+
+
+.merchImg {
+    width: 46px;
+}
+
+#bigLogo {
+    background: url("../img/dc-logo-bg.png");
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+#upperFooter {
+    background: url("../img/footer-bg.jpg");
+    background-size: contain;
+}
+
+#lowerFooter {
+    background-color: #303030ff;
+}

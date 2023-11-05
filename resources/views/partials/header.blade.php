@@ -6,6 +6,10 @@
         @foreach (config('nav-items') as $item)
             <a href="{{ $item['url'] }}" class="nav-item nav-link">{{ $item['voice'] }}</a>
         @endforeach
+
+        <button class="btn btn-danger">
+            <a href="{{Route('comics.index')}}">ADMIN</a>
+        </button>
     </div>
 
     <div class="col-2 py-4">

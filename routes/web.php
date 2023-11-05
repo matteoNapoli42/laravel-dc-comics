@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\ComicsController;
+use App\Http\Controllers\Guests\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +16,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+//ComicController Routes
+
+Route::resource('admin/comics', ComicsController::class);
+
+
+
+
+
+//PageController Routes
+
+Route::get('/', function () {
+    return view('home');
+});
+
+Route::get('/', [PageController::class, 'welcome']);
 
 
 
@@ -23,7 +40,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
-/* GENERIC ROUTES FOR UNDEVELOPED PAGES */
+
+
+/* GENERIC ROUTES FOR UNDEVELOPED PAGES 
 
 Route::get('/characters', function () {
     return view('characters');
@@ -60,3 +79,4 @@ Route::get('/news', function () {
 Route::get('/shop', function () {
     return view('shop');
 })->name('shop');
+*/
