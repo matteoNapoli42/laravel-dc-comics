@@ -6,8 +6,10 @@ use App\Models\Comic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
-
-
+use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Redirect;
 
 class ComicsController extends Controller
 {
@@ -31,8 +33,10 @@ class ComicsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request): RedirectResponse
     {
+        $validated = $request->validated();
+        /* OLD STORE FUNCTION
         $req = $request->all();
         $newComic = new Comic();
         $newComic->sale_date = date("Y-m-d");
@@ -42,7 +46,7 @@ class ComicsController extends Controller
         }
         $newComic->fill($req);
         $newComic->save();
-
+        */
         return to_route('comics.index')->with('message', 'Welldone! Comic created successfully');
     }
 
@@ -65,7 +69,7 @@ class ComicsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicRequest $request, Comic $comic)
     {
         $data = $request->all();
         if ($request->has('thumb') && $comic->thumb) {
