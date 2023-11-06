@@ -7,15 +7,16 @@
     <form action="{{route('comics.store')}}" method="POST" enctype="multipart/form-data">
         
         @csrf
+        @include('partials.alert')
 
         <div class="mb-3">
             <label for="title" class="form-label"><h3>TITLE</h3></label>
-            <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="Inserisci il titolo del fumetto" required>
+            <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="Inserisci il titolo del fumetto" value="{{old('title')}}">
         </div>
 
         <div class="mb-3">
             <label for="description" class="form-label"><h3>DESCRIPTION</h3></label>
-            <input type="text" class="form-control" name="description" id="description" aria-describedby="helpId" placeholder="Inserisci una descrizione" required>
+            <input type="text" class="form-control" name="description" id="description" aria-describedby="helpId" placeholder="Inserisci una descrizione" value="{{old('description')}}">
         </div>
 
         <div class="mb-3">
@@ -26,17 +27,17 @@
 
         <div class="mb-3">
             <label for="price" class="form-label"><h3>PRICE</h3></label>
-            <input type="text" class="form-control" name="price" id="price" aria-describedby="helpId" placeholder="Inserisci il prezzo" required>
+            <input type="text" class="form-control" name="price" id="price" aria-describedby="helpId" placeholder="Inserisci il prezzo" value="{{old('price')}}">
         </div>
 
         <div class="mb-3">
             <label for="series" class="form-label"><h3>SERIES</h3></label>
-            <input type="text" class="form-control" name="series" id="serie" aria-describedby="helpId" placeholder="Inserisci il nome della serie" required>
+            <input type="text" class="form-control" name="series" id="serie" aria-describedby="helpId" placeholder="Inserisci il nome della serie" value="{{old('series')}}">
         </div>
 
         <div class="mb-3">
             <label for="type" class="form-label"><h3>TYPE</h3></label>
-            <input type="text" class="form-control" name="type" id="type" aria-describedby="helpId" placeholder="Inserisci il tipo di articolo" required>
+            <input type="text" class="form-control" name="type" id="type" aria-describedby="helpId" placeholder="Inserisci il tipo di articolo" value="{{old('type')}}">
         </div>
 
         <button type="submit" class="btn btn-success my-5">SAVE <a href="{{route('comics.index')}}"></a></button>

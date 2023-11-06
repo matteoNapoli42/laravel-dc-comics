@@ -33,20 +33,26 @@ class ComicsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreComicRequest $request): RedirectResponse
+    public function store(StoreComicRequest $request)
     {
         $validated = $request->validated();
+        $validated['sale_date'] = date("Y-m-d");
+
         /* OLD STORE FUNCTION
         $req = $request->all();
         $newComic = new Comic();
-        $newComic->sale_date = date("Y-m-d");
+       
+      
+        $newComic->fill($req);
+       */
         if ($request->has('thumb')) {
             $path = Storage::put('comics_thumbs', $request->thumb);
-            $newComic->thumb = $path;
+            $validated['thumb'] = $path;
         }
-        $newComic->fill($req);
+
+
+        $newComic = Comic::create($validated);
         $newComic->save();
-        */
         return to_route('comics.index')->with('message', 'Welldone! Comic created successfully');
     }
 

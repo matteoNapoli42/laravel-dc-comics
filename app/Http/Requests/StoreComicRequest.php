@@ -24,11 +24,12 @@ class StoreComicRequest extends FormRequest
         return [
 
             'title' => 'required|bail|min:3|max:100',
-            'description' => 'nullable|min:10|max:200',
-            'thumb' => 'nullable|image|max:150',
+            'description' => 'nullable|min:10|max:1000',
+            'thumb' => 'nullable|image',
             'price' => 'required|min:3|max:5',
             'series' => 'nullable|min:3|max:100',
             'type' => 'nullable|min:3|max:100',
+            'sale_date' => 'nullable|min:10'
         ];
     }
 }
